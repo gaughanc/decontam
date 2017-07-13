@@ -16,8 +16,8 @@ def get_config(user_config_file, organism):
     config = {
         "method": "bwa",
         "bowtie2_fp": "bowtie2",
-        "bwa_fp":"bwa",
-        "num_threads":8
+        "bwa_fp": "bwa",
+        "num_threads": 8
     }
 
     if user_config_file is None:
@@ -102,8 +102,8 @@ def human_filter_main(argv=None):
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
 
-    summary_data = tool.decontaminate(fwd_fp, rev_fp, args.output_dir,
-                                      args.organism, args.pct, args.frac)
+    summary_data = tool.decontaminate(
+        fwd_fp, rev_fp, args.output_dir, args.organism, args.pct, args.frac)
     save_summary(args.summary_file, config, summary_data)
 
 
